@@ -1,0 +1,16 @@
+<div class="login-card">
+    <form (ngSubmit)="onSubmit()">
+        <div class="logo-section">Taskforge</div>
+        <div class="input-section">
+            <input #usernameRef type="text" name="username" placeholder="username or email" />
+        </div>
+
+        <div class="input-section">
+            <input #passwordRef type="password" name="password" placeholder="password" />
+        </div>
+
+        <div class="button-section">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,68 @@
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Horizontal zentrieren */
+  justify-content: center; /* Vertikal verteilen */
+  gap: 24px;  /* Gleichmäßiger Abstand zwischen 4 Divs */
+  padding: 30px 20px;
+  width: 360px;
+  min-height: 400px;
+  background: white;
+  
+  margin: 20px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.logo-section {
+  font-size: 36px;  /* Größer */
+  font-weight: 800;
+  color: #1e40af;
+  margin-bottom: 32px;  /* Mehr Abstand nach unten zu Inputs */
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 24px;
+
+}
+
+.input-section input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.input-section input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;  /* Button im Container zentriert */
+  width: 100%;
+}
+.button-section button {
+  width: 70%;
+  text-align: center;  /* Text im Button zentriert */
+  padding: 14px 0;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+
+.button-section button:hover {
+  transform: translateY(-1px);
+}
