@@ -1,0 +1,10 @@
+.auth-container {
+  background: linear-gradient(135deg, #10B981, #059669);
+  height: 100dvh;  /* Nur diese eine – dynamisch, scrollbar-sicher */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;  /* Shorthand reicht */
+  box-sizing: border-box;
+}
