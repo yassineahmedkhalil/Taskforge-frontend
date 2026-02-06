@@ -66,3 +66,12 @@
 .button-section button:hover {
   transform: translateY(-1px);
 }
+
+.auth-switch a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}

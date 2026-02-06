@@ -9,6 +9,7 @@ interface TokenResponse{
 
 export interface UserDto {
   username: string;
+  email?: string;
   password: string;
 }
 
@@ -29,5 +30,14 @@ export class AuthService {
           }
         })
       );
+  }
+
+  register(userRequest: UserDto): Observable<any>{
+    return this.http.post(`${this.api}/register`, userRequest)
+    .pipe(
+      tap(response => {
+        console.log(response);
+      })
+    )
   }
 }
