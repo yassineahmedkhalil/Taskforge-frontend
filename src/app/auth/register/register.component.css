@@ -64,3 +64,15 @@
 .button-section button:hover {
   transform: translateY(-1px);
 }
+
+.auth-switch a {
+  color: #007bff;
+  text-decoration: none;
+    justify-content: center;    /* Horizontal zentrieren */
+  align-items: center;        /* Vertikal zentrieren */
+  gap: 8px;
+  margin-left: 5px;
+}
+.auth-switch a:hover {
+  text-decoration: underline;
+}
