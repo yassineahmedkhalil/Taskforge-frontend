@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AuthService, UserDto } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent {
   @ViewChild('usernameRef') usernameRef!: ElementRef<HTMLInputElement>;
   @ViewChild('passwordRef') passwordRef!: ElementRef<HTMLInputElement>;
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
 
   onSubmit(){
     const userRequest: UserDto = {
@@ -22,10 +22,9 @@ export class LoginComponent {
     }
     this.authService.login(userRequest).subscribe({
       next: (response) => {
-        console.log("login OK", response)
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
-        console.log("login failed", error)
       }
     });
   }
