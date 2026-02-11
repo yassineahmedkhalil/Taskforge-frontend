@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthTogglePageComponent } from './app/auth/auth-toggle-page/auth-toggle-page.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './app/dashboard/dashboard.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/auth', pathMatch: 'full' },
