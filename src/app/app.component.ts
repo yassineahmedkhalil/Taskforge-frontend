@@ -1,6 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { TokenService } from './auth/services/token.service';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +7,6 @@ import { TokenService } from './auth/services/token.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
-  tokenService = inject(TokenService);
-  router = inject(Router);
+export class AppComponent {
 
-  ngOnInit() {
-    this.tokenService.isLoggedIn()
-      ? this.router.navigate(['/dashboard'])
-      : this.router.navigate(['/auth']);
-  }
 }
