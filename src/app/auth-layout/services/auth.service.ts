@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { TokenService } from './token.service';
 import { environment } from '../../../environments/environment';
+import { TokenService } from '../../core/services/token.service';
 
 interface TokenResponse{
   accessToken?: string;

@@ -15,6 +15,7 @@ export class TokenService {
 
   deleteToken() {
     sessionStorage.removeItem(this.tokenKey);
+    sessionStorage.removeItem(this.refreshTokenKey);
   }
 
   getToken(): string | null {

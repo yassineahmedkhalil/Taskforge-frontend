@@ -1,0 +1,24 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1e293b;
+  color: white;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav a:hover {
+  color: #ad754d;
+}
+
+.nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}

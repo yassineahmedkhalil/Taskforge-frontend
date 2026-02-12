@@ -1,7 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { TokenService } from '../app/auth/services/token.service';
-import { environment } from '../environments/environment';
+import { environment } from '../../../environments/environment';
+import { TokenService } from '../services/token.service';
 
 const AUTH_EXCLUDED_URLS = ['/auth/login', '/auth/register'];
 
