@@ -1,12 +1,24 @@
 <div class="login-card">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="logo-section">Taskforge</div>
         <div class="input-section">
-            <input #usernameRef type="text" name="username" placeholder="username or email" />
+            <input 
+                type="text" 
+                name="username" 
+                placeholder="username or email" 
+                formControlName="username"
+                required
+            />
         </div>
 
         <div class="input-section">
-            <input #passwordRef type="password" name="password" placeholder="password" />
+            <input 
+                type="password" 
+                name="password" 
+                placeholder="password" 
+                formControlName="password"
+                required 
+            />
         </div>
 
         <div class="button-section">

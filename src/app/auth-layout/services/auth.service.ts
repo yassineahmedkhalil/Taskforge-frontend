@@ -22,9 +22,11 @@ export class AuthService {
 
   constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-  private readonly AUTH_API = 'auth';
+  private readonly LOGIN_API_URL = environment.apiUrl+'auth/login';
+  private readonly REGISTER_API_URL = environment.apiUrl+'auth/register';
+
   login(userRequest: UserDto): Observable<TokenResponse>{
-    return this.http.post(`${environment.apiUrl}${this.AUTH_API}/login`, userRequest)
+    return this.http.post(`${this.LOGIN_API_URL}`, userRequest)
       .pipe(
         tap(response => {
           if(response.accessToken) {
@@ -39,7 +41,7 @@ export class AuthService {
   }
 
   register(userRequest: UserDto): Observable<TokenResponse>{
-    return this.http.post(`${environment.apiUrl}${this.AUTH_API}/register`, userRequest)
+    return this.http.post(`${this.REGISTER_API_URL}`, userRequest)
     .pipe(
       tap(response => {
         console.log(response);
