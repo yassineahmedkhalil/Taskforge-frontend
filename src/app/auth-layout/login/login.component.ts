@@ -1,24 +1,37 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AuthService, UserDto } from '../services/auth.service';
-import { FormsModule } from '@angular/forms';
+import { 
+  NonNullableFormBuilder, 
+  Validators,  
+  ReactiveFormsModule 
+} from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, RouterModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-  @ViewChild('usernameRef') usernameRef!: ElementRef<HTMLInputElement>;
-  @ViewChild('passwordRef') passwordRef!: ElementRef<HTMLInputElement>;
+export class LoginComponent{
+  private formBuilder = inject(NonNullableFormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  constructor(private authService: AuthService, private router: Router){}
+  loginForm = this.formBuilder.group({
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+  });
 
-  onSubmit(){
+  login(){
+    if(this.loginForm.invalid)
+    {
+      this.loginForm.markAsTouched();
+      return;
+    }
     const userRequest: UserDto = {
-      username: this.usernameRef.nativeElement.value,
-      password: this.passwordRef.nativeElement.value
+      username: this.loginForm.controls.username.value,
+      password: this.loginForm.controls.password.value
     }
     this.authService.login(userRequest).subscribe({
       next: (response) => {

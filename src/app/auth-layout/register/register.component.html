@@ -1,20 +1,44 @@
 <div class="register-card">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
         <div class="logo-section">Taskforge</div>
         <div class="input-section">
-            <input #emailRef type="email" name="email" placeholder="email" />
+            <input  
+                type="email" 
+                name="email" 
+                placeholder="email" 
+                formControlName="email"
+                required
+            />
         </div>
         <div class="input-section">
-            <input #usernameRef type="text" name="username" placeholder="username" />
+            <input  
+                type="text" 
+                name="username" 
+                placeholder="username" 
+                formControlName="username"
+                required
+            />
         </div>
         <div class="input-section">
-            <input #passwordRef type="password" name="password" placeholder="password" />
+            <input  
+                type="password" 
+                name="password" 
+                placeholder="password" 
+                formControlName="password"
+                required
+            />
         </div>
         <div class="input-section">
-            <input #confirmPasswordRef type="password" name="confirm password" placeholder="confirm password" />
+            <input  
+                type="password" 
+                name="confirm password" 
+                placeholder="confirm password" 
+                formControlName="confirmPassword"
+                required
+            />
         </div>
         <div class="button-section">
-            <button type="submit">Register  </button>
+            <button type="submit">Register</button>
         </div>
         <div class="auth-switch">
             <span style="margin-left:25px">You have an account? </span>
