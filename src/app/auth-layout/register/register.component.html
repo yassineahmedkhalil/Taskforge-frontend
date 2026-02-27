@@ -2,43 +2,48 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
         <div class="logo-section">Taskforge</div>
         <div class="input-section">
-            <input  
-                type="email" 
-                name="email" 
-                placeholder="email" 
-                formControlName="email"
-                required
-            />
+            <input formControlName="email" placeholder="Email">
+            <div class="error-slot">
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+                    E-Mail erforderlich
+                </div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input formControlName="username" placeholder="Username">
+            <div class="error-slot">
+                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
+                    class="error">
+                    Username erforderlich
+                </div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="password" name="password" placeholder="password" formControlName="password" required />
+
+            <div class="error-slot">
+                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                    class="error">
+                    Password muss mindestens 6 Zeichen lang sein
+                </div>
+            </div>
+
         </div>
         <div class="input-section">
-            <input  
-                type="text" 
-                name="username" 
-                placeholder="username" 
-                formControlName="username"
-                required
-            />
-        </div>
-        <div class="input-section">
-            <input  
-                type="password" 
-                name="password" 
-                placeholder="password" 
-                formControlName="password"
-                required
-            />
-        </div>
-        <div class="input-section">
-            <input  
-                type="password" 
-                name="confirm password" 
-                placeholder="confirm password" 
-                formControlName="confirmPassword"
-                required
-            />
+            <input type="password" name="confirmPassword" placeholder="confirm password"
+                formControlName="confirmPassword" required />
+            <div class="error-slot">
+                <div *ngIf="registerForm.hasError('passwordsDontMatch') && registerForm.get('confirmPassword')?.touched"
+                    class="error">
+                    Passwörter müssen identisch sein.
+                </div>
+            </div>
+
         </div>
         <div class="button-section">
-            <button type="submit">Register</button>
+            <button type="submit" [disabled]="false">Register</button>
         </div>
         <div class="auth-switch">
             <span style="margin-left:25px">You have an account? </span>
