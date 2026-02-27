@@ -24,6 +24,9 @@
   width: 100%;
   margin-bottom: 24px;
 }
+.input-section {
+  width: 100%; 
+}
 
 .input-section input {
   width: 100%;
@@ -31,7 +34,7 @@
   border: 2px solid #e5e7eb;
   border-radius: 10px;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   transition: border-color 0.2s;
 }
 
@@ -68,7 +71,7 @@
 .auth-switch a {
   color: #007bff;
   text-decoration: none;
-    justify-content: center;    /* Horizontal zentrieren */
+  justify-content: center;    /* Horizontal zentrieren */
   align-items: center;        /* Vertikal zentrieren */
   gap: 8px;
   margin-left: 5px;
@@ -87,4 +90,21 @@ input.ng-invalid.ng-touched {
 
 input.ng-valid.ng-touched {
   border: 1px solid green;
+}
+.error-slot {
+  min-height: 18px;   /* 1 Zeile reservieren */
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.error {
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  line-height: 16px;
+  color: #b91c1c;
 }
