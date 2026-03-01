@@ -4,7 +4,8 @@
         <div class="input-section">
             <input formControlName="email" placeholder="Email">
             <div class="error-slot">
-                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                    class="field-error">
                     E-Mail erforderlich
                 </div>
             </div>
@@ -14,7 +15,7 @@
             <input formControlName="username" placeholder="Username">
             <div class="error-slot">
                 <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched"
-                    class="error">
+                    class="field-error">
                     Username erforderlich
                 </div>
             </div>
@@ -25,7 +26,7 @@
 
             <div class="error-slot">
                 <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
-                    class="error">
+                    class="field-error">
                     Password muss mindestens 6 Zeichen lang sein
                 </div>
             </div>
@@ -36,14 +37,14 @@
                 formControlName="confirmPassword" required />
             <div class="error-slot">
                 <div *ngIf="registerForm.hasError('passwordsDontMatch') && registerForm.get('confirmPassword')?.touched"
-                    class="error">
+                    class="field-error">
                     Passwörter müssen identisch sein.
                 </div>
             </div>
 
         </div>
         <div class="button-section">
-            <button type="submit" [disabled]="false">Register</button>
+            <button type="submit">Register</button>
         </div>
         <div class="auth-switch">
             <span style="margin-left:25px">You have an account? </span>

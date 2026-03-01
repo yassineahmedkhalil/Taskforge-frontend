@@ -1,7 +1,7 @@
 .register-card {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Horizontal zentrieren */
+  align-items: stretch;  /* Horizontal zentrieren */
   justify-content: center; /* Vertikal verteilen */
   gap: 24px;  /* Gleichmäßiger Abstand zwischen 4 Divs */
   padding: 30px 20px;
@@ -97,7 +97,7 @@ input.ng-valid.ng-touched {
   padding-left: 4px;
 }
 
-.error {
+.field-error {
   display: block;
   max-width: 100%;
   white-space: normal;

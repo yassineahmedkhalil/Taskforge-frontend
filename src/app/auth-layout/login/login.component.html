@@ -1,24 +1,31 @@
 <div class="login-card">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="logo-section">Taskforge</div>
-        <div class="input-section">
-            <input 
-                type="text" 
-                name="username" 
-                placeholder="username or email" 
-                formControlName="username"
-                required
-            />
+        <div class="form-error" *ngIf="loginForm.hasError('invalidLogin')">
+            Email oder Benutzername sind falsch
+            <button class="closeButton" type="button" (click)="closeFormError()">
+                <i class="pi pi-times"></i>
+            </button>
         </div>
 
         <div class="input-section">
-            <input 
-                type="password" 
-                name="password" 
-                placeholder="password" 
-                formControlName="password"
-                required 
-            />
+            <input type="text" name="username" placeholder="username or email" formControlName="username" required />
+            <div class="error-slot">
+                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+                    class="field-error">
+                    Email oder Username erforderlich
+                </div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <input type="password" name="password" placeholder="password" formControlName="password" required />
+            <div class="error-slot">
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                    class="field-error">
+                    Password erforderlich
+                </div>
+            </div>
         </div>
 
         <div class="button-section">
