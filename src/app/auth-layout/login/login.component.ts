@@ -6,10 +6,11 @@ import {
   ReactiveFormsModule 
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  imports: [RouterModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -26,7 +27,7 @@ export class LoginComponent{
   login(){
     if(this.loginForm.invalid)
     {
-      this.loginForm.markAsTouched();
+      this.loginForm.markAllAsTouched();
       return;
     }
     const userRequest: UserDto = {
@@ -38,7 +39,16 @@ export class LoginComponent{
         this.router.navigate(['/dashboard']);
       },
       error: (error) => {
+        if(error.error.status == 401)
+        {
+          this.loginForm.setErrors({invalidLogin: true});
+          this.loginForm.markAsDirty();
+        }
       }
     });
+  }
+  closeFormError()
+  {
+    this.loginForm.setErrors(null);
   }
 }

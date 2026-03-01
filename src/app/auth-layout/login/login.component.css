@@ -1,11 +1,12 @@
 .login-card {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Horizontal zentrieren */
+  align-items: stretch;  /* Horizontal zentrieren */
   justify-content: center; /* Vertikal verteilen */
   gap: 24px;  /* Gleichmäßiger Abstand zwischen 4 Divs */
   padding: 30px 20px;
   width: 360px;
+  max-width: 100%;
   min-height: 400px;
   background: white;
   
@@ -26,13 +27,17 @@
 
 }
 
+.input-section {
+  width: 100%; 
+}
+
 .input-section input {
   width: 100%;
   padding: 14px 16px;
   border: 2px solid #e5e7eb;
   border-radius: 10px;
   font-size: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   transition: border-color 0.2s;
 }
 
@@ -87,4 +92,41 @@ input.ng-invalid.ng-touched {
 
 input.ng-valid.ng-touched {
   border: 1px solid green;
+}
+.field-error {
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  line-height: 16px;
+  color: #b91c1c;
+}
+.form-error{
+  background:#fde8e8;
+  border:1px solid #f5b5b5;
+  color:#7f1d1d;
+  padding:12px 14px;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+  gap: 12px;
+  overflow-wrap: anywhere;
+}
+.pi.pi-times{
+  cursor:pointer;
+  color: #5f0c0c;
+}
+.closeButton{
+  background: transparent;
+  border: none;
+}
+.error-slot {
+  min-height: 18px;
+  margin-top: 4px;
+  padding-left: 4px;
 }
